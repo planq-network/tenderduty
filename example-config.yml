@@ -1,7 +1,7 @@
 ---
 
 # controls whether the dashboard is enabled.
-enable_dashboard: yes
+enable_dashboard: no
 # What TCP port the dashboard will listen on. Only the port is controllable for now.
 listen_port: 8888
 # hide_logs is useful if the dashboard will be posted publicly. It disables the log feed,
@@ -12,7 +12,7 @@ hide_logs: no
 node_down_alert_minutes: 3
 
 # Should the prometheus exporter be enabled?
-prometheus_enabled: yes
+prometheus_enabled: no
 # What port should it listen on? For now only port is configurable.
 prometheus_listen_port: 28686
 
@@ -28,7 +28,7 @@ pagerduty:
 # Discord settings
 discord:
   # Alert to discord?
-  enabled: no
+  enabled: yes
   # The webhook is set by right-clicking on a channel, editing the settings, and configuring a webhook in the intergrations section.
   webhook: https://discord.com/api/webhooks/999999999999999999/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 
@@ -46,12 +46,12 @@ telegram:
 chains:
 
   # The user-friendly name that will be used for labels. Highly suggest wrapping in quotes.
-  "Osmosis":
+  "Planq":
     # chain_id is validated for a match when connecting to an RPC endpoint, also used as a label in several places.
-    chain_id: osmosis-1
+    chain_id: planq_7070-2
     # Hooray, in v2 we derive the valcons from abci queries so you don't have to jump through hoops to figure out how
     # to convert ed25519 keys to the appropriate bech32 address
-    valoper_address: osmovaloper1xxxxxxx...
+    valoper_address: plqvaloper1
     # Should the monitor revert to using public API endpoints if all supplied RCP nodes fail?
     # This isn't always reliable, not all public nodes have websocket proxying setup correctly.
     public_fallback: no
@@ -89,7 +89,7 @@ chains:
 
       # Chain specific setting for pagerduty
       pagerduty:
-        enabled: yes
+        enabled: no
         api_key: "" # uses default if blank
 
       # Discord settings
@@ -99,7 +99,7 @@ chains:
 
       # Telegram settings
       telegram:
-        enabled: yes
+        enabled: no
         api_key: "" # uses default if blank
         channel: "" # uses default if blank
 
@@ -111,5 +111,5 @@ chains:
         # Should we send an alert if this host isn't responding?
         alert_if_down: yes
       # repeat hosts for monitoring redundancy
-      - url: https://some-other-node:443
+      - url: https://rpc.planq.network:443
         alert_if_down: no
