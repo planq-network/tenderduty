@@ -30,7 +30,7 @@ discord:
   # Alert to discord?
   enabled: yes
   # The webhook is set by right-clicking on a channel, editing the settings, and configuring a webhook in the intergrations section.
-  webhook: https://discord.com/api/webhooks/999999999999999999/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+  webhook: https://discord.com/api/webhooks/
 
 # Telegram settings
 telegram:
